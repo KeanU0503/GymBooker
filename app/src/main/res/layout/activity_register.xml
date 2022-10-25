@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Register">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/reg_dumBell"
+            android:layout_width="wrap_content"
+            android:layout_height="200dp"
+            android:src="@drawable/dum_bell">
+        </ImageView>
+
+        <EditText
+            android:id="@+id/atyFullName"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="60dp"
+            android:inputType="textPersonName"
+            android:hint="Full Name"
+            android:background="@drawable/custom_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+        <EditText
+            android:id="@+id/atyEmailRegister"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:drawableStart="@drawable/custom_email_icon"
+            android:drawablePadding="17dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+        <EditText
+            android:id="@+id/atyPasswordRegister"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:drawableStart="@drawable/custom_password_icon"
+            android:drawablePadding="17dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"/>
+
+        <EditText
+            android:id="@+id/atyContactNumber"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:hint="Contact Number"
+            android:inputType="textPhonetic"
+            android:drawableStart="@drawable/custom_contact_number_icon"
+            android:drawablePadding="17dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_input"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp">
+        </EditText>
+
+        <Button
+            android:id="@+id/atySignUp"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="Sign Up">
+        </Button>
+
+        <TextView
+            android:id="@+id/atyToLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="Head to Login"
+            android:layout_gravity="center">
+        </TextView>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+

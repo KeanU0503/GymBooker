@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "485337361545",
+    "firebase_url": "https://gymbooker-4c510-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "gymbooker-4c510",
+    "storage_bucket": "gymbooker-4c510.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485337361545:android:95035f80a1949c9b6c2a58",
+        "android_client_info": {
+          "package_name": "com.example.gymbooker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485337361545-b4aa3atmf4qfu6s7rp6oiss54c9mhkjt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSVNiDN17DLHeOMgZOo2yUAV4GuAAQMR0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485337361545-b4aa3atmf4qfu6s7rp6oiss54c9mhkjt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

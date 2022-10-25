@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".UserHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:orientation="vertical">
+
+<!--        <RelativeLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="?actionBarSize">-->
+
+<!--            <ImageView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:src="@drawable/ic_back"-->
+<!--                android:padding="15dp">-->
+<!--            </ImageView>-->
+
+<!--        </RelativeLayout>-->
+
+
+        <TextView
+            android:id="@+id/user_Welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Welcome"
+            android:textSize="30sp"
+            android:textAllCaps="true"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/actUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User">
+
+        </TextView>
+
+<!--1st-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@color/purple_200">
+
+                <TextView
+                    android:id="@+id/act_tv_gymAccess"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="27dp"
+                    android:text="Gym Access"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/act_gymAccess_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/act_tv_gymAccess"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="Gyms, Classes and Trainers"
+                    android:textSize="10sp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/act_user_bookNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:text="Book Now">
+
+                </Button>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/act_gymAccess_image"
+                android:layout_width="137dp"
+                android:layout_height="180dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-17dp"
+                android:src="@drawable/gym_access">
+
+            </ImageView>
+
+            </RelativeLayout>
+
+<!--2nd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp">
+
+                <ImageView
+                    android:id="@+id/act_gymHistory_image"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/gym_history">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/act_tv_gymHistory"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="27dp"
+                    android:text="Gym History"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/act_gym_userHistory_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/act_tv_gymHistory"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="Your past bookings with us"
+                    android:textSize="10sp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/act_user_SeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:text="See All">
+
+                </Button>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+<!--3rd-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+                android:background="@color/purple_200">
+
+                <ImageView
+                    android:id="@+id/act_gymPhone_image"
+                    android:layout_width="70dp"
+                    android:layout_height="100dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="70dp"
+                    android:src="@drawable/phone">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/act_tv_Chats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="27dp"
+                    android:text="Chats"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/act_myProfile_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/act_tv_Chats"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="Chat with admin and trainers"
+                    android:textSize="10sp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/act_user_toChats"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginStart="10dp"
+                    android:text="To Chats">
+
+                </Button>
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/act_gym_userChat"
+                android:layout_width="120dp"
+                android:layout_height="160dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="-27dp"
+                android:layout_marginRight="10dp"
+                android:src="@drawable/chat">
+
+            </ImageView>
+
+        </RelativeLayout>
+
+<!--4th-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="190dp">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_margin="20dp"
+>
+
+                <ImageView
+                    android:id="@+id/act_gym_userProfile"
+                    android:layout_width="100dp"
+                    android:layout_height="150dp"
+                    android:layout_marginStart="7dp"
+                    android:src="@drawable/profile">
+
+                </ImageView>
+
+                <TextView
+                    android:id="@+id/act_tv_userProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:padding="27dp"
+                    android:text="My Profile"
+                    android:textSize="30sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/act_userProfile_des"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBottom="@+id/act_tv_userProfile"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginEnd="20dp"
+                    android:layout_marginBottom="7dp"
+                    android:text="See your profile and update"
+                    android:textSize="10sp">
+
+                </TextView>
+
+                <Button
+                    android:id="@+id/act_user_toProfile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginEnd="10dp"
+                    android:text="To Profile">
+
+                </Button>
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+</ScrollView>
