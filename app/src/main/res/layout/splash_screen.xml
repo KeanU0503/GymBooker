@@ -8,8 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
-        android:src="@drawable/ic_splashscreen">
-
-    </ImageView>
+        android:src="@drawable/splash_screen"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

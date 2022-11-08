@@ -4,23 +4,26 @@ package com.example.gymbooker.Model;
 
 public class ModelGymClasses {
 
-    private String inClassName, inClassDetails, inClassTrainer, inClassDuration, inClassDate, inClassTime; // Java object
+    private String inClassName, inClassDetails, inClassTrainer, inClassDuration, inClassDay, inClassTime, inClassLimit, inClassCategory, inMaxLimit; // Java object
 
-    // For Firestore // Constructors
-    public ModelGymClasses(String ClassName, String ClassDetails, String ClassTrainer, String ClassDuration, String ClassDate, String ClassTime) {
+    // Constructors
+    public ModelGymClasses(String ClassName, String ClassDetails, String ClassTrainer, String ClassDuration, String ClassDay, String ClassTime, String ClassLimit, String ClassCategory, String MaxLimit) {
 
         inClassName = ClassName;
         inClassDetails = ClassDetails;
         inClassTrainer = ClassTrainer;
         inClassDuration = ClassDuration;
-        inClassDate = ClassDate;
+        inClassDay = ClassDay;
         inClassTime = ClassTime;
-
+        inClassLimit = ClassLimit;
+        inClassCategory = ClassCategory;
+        inMaxLimit = MaxLimit;
     }
 
+    // access the model with getter and setter methods
     public String getInClassName() { return inClassName; }
 
-    public void setInClassName(String inClassName) { this.inClassName = inClassName; } // referring to te field (String) on the object that this method was called
+    public void setInClassName(String inClassName) { this.inClassName = inClassName; } // referring to the field (String) on the object that this method was called
 
     public String getInClassDetails() { return inClassDetails; }
 
@@ -34,16 +37,39 @@ public class ModelGymClasses {
 
     public void setInClassDuration(String inClassDuration) { this.inClassDuration = inClassDuration; }
 
-    public String getInClassDate() { return inClassDate; }
+    public String getInClassDay() {
+        return inClassDay;
+    }
 
-    public void setInClassDate(String inClassDate) { this.inClassDate = inClassDate; }
+    public void setInClassDay(String inClassDay) {
+        this.inClassDay = inClassDay;
+    }
 
     public String getInClassTime() { return inClassTime; }
 
     public void setInClassTime(String inClassTime) { this.inClassTime = inClassTime; }
 
+    public String getInClassLimit() {
+        return inClassLimit;
+    }
 
+    public void setInClassLimit(String inClassLimit) {
+        this.inClassLimit = inClassLimit;
+    }
 
+    public String getInClassCategory() {
+        return inClassCategory;
+    }
 
+    public void setInClassCategory(String inClassCategory) {
+        this.inClassCategory = inClassCategory;
+    }
 
+    public String getInMaxLimit() {
+        return inMaxLimit;
+    }
+
+    public void setInMaxLimit(String inMaxLimit) {
+        this.inMaxLimit = inMaxLimit;
+    }
 }

@@ -47,10 +47,12 @@ public class AdapterViewChatMessages extends RecyclerView.Adapter {
         {
             SenderViewHolder viewHolder = (SenderViewHolder) holder;
             viewHolder.tvMessages.setText(messages.getMessage());
+            viewHolder.tvTime.setText(messages.getCurrentTime());
 
         }else {
             ReceiverViewHolder viewHolder = (ReceiverViewHolder) holder;
             viewHolder.tvMessages.setText(messages.getMessage());
+            viewHolder.tvTime.setText(messages.getCurrentTime());
         }
     }
 
@@ -74,24 +76,25 @@ public class AdapterViewChatMessages extends RecyclerView.Adapter {
     // 2 view holder because we have 2 layout outs
     class SenderViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvMessages;
+        TextView tvMessages, tvTime;
 
         public SenderViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvMessages = itemView.findViewById(R.id.text_sendMessages);
+            tvTime = itemView.findViewById(R.id.display_senderTime);
         }
     }
 
      class ReceiverViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvMessages;
+        TextView tvMessages, tvTime;
 
         public ReceiverViewHolder(@NonNull View itemView) {
             super(itemView);
 
             tvMessages = itemView.findViewById(R.id.text_receiveMessages);
-
+            tvTime = itemView.findViewById(R.id.display_receiverTime);
         }
     }
 

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,39 +10,45 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:orientation="vertical">
 
-<!--        <RelativeLayout-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="?actionBarSize">-->
-
-<!--            <ImageView-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:src="@drawable/ic_back"-->
-<!--                android:padding="15dp">-->
-<!--            </ImageView>-->
-
-<!--        </RelativeLayout>-->
-
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
         <TextView
             android:id="@+id/user_Welcome"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Welcome"
-            android:textSize="30sp"
+            android:textColor="@color/blue"
+            android:textSize="40sp"
             android:textAllCaps="true"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
             android:textStyle="bold"/>
 
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="70dp"
+                android:background="@drawable/background_just_logo"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
         <TextView
-            android:id="@+id/actUser"
+            android:id="@+id/show_userName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="User">
-
-        </TextView>
+            android:textColor="@color/orange"
+            android:layout_marginStart="23dp"
+            android:text="User"/>
+        </LinearLayout>
 
 <!--1st-->
         <RelativeLayout
@@ -55,7 +62,7 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
                 android:layout_marginBottom="20dp"
-                android:background="@color/purple_200">
+                android:background="@drawable/curve_rectangle_blue">
 
                 <TextView
                     android:id="@+id/act_tv_gymAccess"
@@ -79,28 +86,29 @@
                 </TextView>
 
                 <Button
-                    android:id="@+id/act_user_bookNow"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/user_bookNow"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_button_blue"
                     android:text="Book Now">
 
                 </Button>
 
             </RelativeLayout>
 
-            <ImageView
-                android:id="@+id/act_gymAccess_image"
-                android:layout_width="137dp"
-                android:layout_height="180dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginTop="-17dp"
-                android:src="@drawable/gym_access">
 
-            </ImageView>
-
+                <ImageView
+                    android:id="@+id/act_gymAccess_image"
+                    android:layout_width="137dp"
+                    android:layout_height="180dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="-17dp"
+                    android:src="@drawable/gym_access"/>
             </RelativeLayout>
+
 
 <!--2nd-->
         <RelativeLayout
@@ -109,7 +117,7 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="190dp"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="20dp"
@@ -119,6 +127,7 @@
                     android:id="@+id/act_gymHistory_image"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
+                    android:layout_marginStart="10dp"
                     android:src="@drawable/gym_history">
 
                 </ImageView>
@@ -147,13 +156,16 @@
                 </TextView>
 
                 <Button
-                    android:id="@+id/act_user_SeeAll"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/user_SeeAll"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="10dp"
-                    android:text="See All">
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_button_orange"
+                    android:text="See All"
+                    android:textColor="@color/white">
 
                 </Button>
 
@@ -169,8 +181,11 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_margin="20dp"
-                android:background="@color/purple_200">
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curve_rectangle_blue">
 
                 <ImageView
                     android:id="@+id/act_gymPhone_image"
@@ -179,9 +194,7 @@
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="35dp"
                     android:layout_marginRight="70dp"
-                    android:src="@drawable/phone">
-
-                </ImageView>
+                    android:src="@drawable/phone" />
 
                 <TextView
                     android:id="@+id/act_tv_Chats"
@@ -205,11 +218,13 @@
                 </TextView>
 
                 <Button
-                    android:id="@+id/act_user_toChats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/user_toChats"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentBottom="true"
                     android:layout_marginStart="10dp"
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_button_blue"
                     android:text="To Chats">
 
                 </Button>
@@ -217,7 +232,7 @@
             </RelativeLayout>
 
             <ImageView
-                android:id="@+id/act_gym_userChat"
+                android:id="@+id/userChat"
                 android:layout_width="120dp"
                 android:layout_height="160dp"
                 android:layout_alignParentRight="true"
@@ -237,15 +252,17 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
-                android:layout_margin="20dp"
->
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp">
 
                 <ImageView
                     android:id="@+id/act_gym_userProfile"
                     android:layout_width="100dp"
                     android:layout_height="150dp"
-                    android:layout_marginStart="7dp"
-                    android:src="@drawable/profile">
+                    android:layout_marginStart="30dp"
+                    android:src="@drawable/user_edit_profile">
 
                 </ImageView>
 
@@ -273,46 +290,49 @@
                 </TextView>
 
                 <Button
-                    android:id="@+id/act_user_toProfile"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:id="@+id/user_toProfile"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentBottom="true"
                     android:layout_marginEnd="10dp"
-                    android:text="To Profile">
+                    android:layout_marginBottom="5dp"
+                    android:background="@drawable/custom_button_orange"
+                    android:text="To Profile"
+                    android:textColor="@color/white">
 
                 </Button>
-
             </RelativeLayout>
         </RelativeLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="250dp"
+                android:layout_marginTop="30dp"
+                android:textSize="10sp"
+                android:textStyle="bold"
+                android:text="Log Out"/>
+
+        <ImageButton
+            android:id="@+id/logout"
+            android:onClick="logout"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="3dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/logout_user"
+            android:text="Log Out"/>
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </LinearLayout>
     </LinearLayout>
-
-
-
 
 </ScrollView>

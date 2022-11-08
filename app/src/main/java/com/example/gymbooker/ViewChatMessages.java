@@ -20,14 +20,16 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 public class ViewChatMessages extends AppCompatActivity {
 
-    FirebaseDatabase fDatabase = FirebaseDatabase.getInstance("https://gymbooker-4c510-default-rtdb.asia-southeast1.firebasedatabase.app/");
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    DatabaseReference dReference;
+    private FirebaseDatabase fDatabase = FirebaseDatabase.getInstance("https://gymbooker-4c510-default-rtdb.asia-southeast1.firebasedatabase.app/");
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private DatabaseReference dReference;
 
     ArrayList<ModelViewChatMessages> ModelViewChatMessages;
 
@@ -35,16 +37,26 @@ public class ViewChatMessages extends AppCompatActivity {
     EditText etMessage;
     ImageView ivSend;
 
-    private String ReceiverName, ReceiverUserID, SenderUserID;
+    private String ReceiverName, ReceiverUID, SenderUID;
     private String SenderRoom, ReceiverRoom, UserID;
 
     RecyclerView RecMessages;
     AdapterViewChatMessages AdapterViewChatMessages;
 
+    Calendar calendar;
+
+    String currentTime;
+    SimpleDateFormat simpleDateFormat;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_view_chat_messages);
+        setContentView(R.layout.view_chat_messages);
+        getSupportActionBar().hide();
+
+        calendar = Calendar.getInstance();
+        simpleDateFormat = new SimpleDateFormat("dd MMM yyy hh:mm a");
 
         tvTopName = findViewById(R.id.viewChatMessages_topName);
         etMessage = findViewById(R.id.viewChatMessages_typeMessages);
@@ -52,17 +64,17 @@ public class ViewChatMessages extends AppCompatActivity {
         RecMessages = findViewById(R.id.RV_ViewChatMessages);
 
         UserID = fAuth.getCurrentUser().getUid();
-        SenderUserID = fAuth.getUid();
+        SenderUID = fAuth.getUid();
 
-        ReceiverName = getIntent().getStringExtra("Name");
-        ReceiverUserID = getIntent().getStringExtra("Uid");
+        ReceiverName = getIntent().getStringExtra("Full Name");
+        ReceiverUID = getIntent().getStringExtra("User ID");
 
         tvTopName.setText("" + ReceiverName);
 
         ModelViewChatMessages = new ArrayList<>();
 
-        SenderRoom = SenderUserID + ReceiverUserID;
-        ReceiverRoom = ReceiverUserID + SenderUserID;
+        SenderRoom = SenderUID + ReceiverUID;
+        ReceiverRoom = ReceiverUID + SenderUID;
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
@@ -93,19 +105,6 @@ public class ViewChatMessages extends AppCompatActivity {
             }
         });
 
-        dReference = fDatabase.getReference().child("Users").child(fAuth.getUid());
-        dReference.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
-
         ivSend.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -113,13 +112,14 @@ public class ViewChatMessages extends AppCompatActivity {
 
                 if(message.isEmpty())
                 {
-                    Toast.makeText(ViewChatMessages.this, "Pls enter a message", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ViewChatMessages.this, "Please enter a message", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 etMessage.setText("");
 
                 Date date = new Date();
-                ModelViewChatMessages messages = new ModelViewChatMessages(message,SenderUserID,date.getTime()); // Object of the model
+                currentTime = simpleDateFormat.format(calendar.getTime());
+                ModelViewChatMessages messages = new ModelViewChatMessages(message,SenderUID,date.getTime(),currentTime); // Object of the model
 
                 fDatabase = FirebaseDatabase.getInstance();
                 fDatabase.getReference().child("Chats")

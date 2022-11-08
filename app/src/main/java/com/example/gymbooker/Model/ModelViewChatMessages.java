@@ -4,16 +4,17 @@ public class ModelViewChatMessages {
 
     String message, senderId;
     long timeStamp;
+    String currentTime;
 
     public ModelViewChatMessages() { // Empty constructor
 
     }
 
-    public ModelViewChatMessages(String message, String senderId, long timeStamp) {
+    public ModelViewChatMessages(String message, String senderId, long timeStamp, String currentTime) {
         this.message = message;
         this.senderId = senderId;
         this.timeStamp = timeStamp;
-
+        this.currentTime = currentTime;
     }
 
     public String getMessage() {
@@ -36,8 +37,13 @@ public class ModelViewChatMessages {
         return timeStamp;
     }
 
-    public void setTimeStamp(long timeStamp) {
-        this.timeStamp = timeStamp;
+    public void setTimeStamp(long timeStamp) {this.timeStamp = timeStamp; }
+
+    public String getCurrentTime() {
+        return currentTime;
     }
 
+    public void setCurrentTime(String currentTime) {
+        this.currentTime = currentTime;
+    }
 }

@@ -1,4 +1,4 @@
-package com.example.gymbooker;
+package com.example.gymbooker.GymAccess;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.SearchView;
@@ -7,8 +7,11 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.example.gymbooker.Adapter.AdapterGymClasses;
 import com.example.gymbooker.Model.ModelGymClasses;
+import com.example.gymbooker.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -18,46 +21,42 @@ import java.util.ArrayList;
 
 public class GymClasses extends AppCompatActivity {
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
     ArrayList<ModelGymClasses> ModelGymClasses;
     ArrayList<ModelGymClasses> ModelSearchList;
 
     AdapterGymClasses AdapterGymClasses;
 
+    int statistic;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gym_classes);
+        setContentView(R.layout.gym_classes);
 
-        // Set all the recycler view settings
         RecyclerView recGymClasses = findViewById(R.id.RV_GymClasses);
         recGymClasses.setHasFixedSize(true);
         recGymClasses.setLayoutManager(new LinearLayoutManager(this));
 
-        // Set to the value or
-        // put in the condition appropriate to the start of an operation
-        ModelGymClasses = new ArrayList<>(); // Initialize
-
-        // Create instance for adapter
+        ModelGymClasses = new ArrayList<>();
         AdapterGymClasses = new AdapterGymClasses(ModelGymClasses, GymClasses.this);
 
-        // Set the recyclerview with the adapter
         recGymClasses.setAdapter(AdapterGymClasses);
 
-        readGymClassesDB();
 
+        readGymClassesDB();
+        statisticGymClasses();
     }
 
-    // Search bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
-        getMenuInflater().inflate(R.menu.search_gym_classes, menu); // To get our inflater inside inflater we are inflating our menu file.
-        MenuItem item = menu.findItem(R.id.action_search); //  To get our menu item.
+        getMenuInflater().inflate(R.menu.menu_search_bar, menu);
+        MenuItem iconSearch = menu.findItem(R.id.action_search);
 
-        SearchView searchView = (SearchView) item.getActionView(); // Getting search view of our item.
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() { // To call set on query text listener method.
+        SearchView searchView = (SearchView) iconSearch.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 return false;
@@ -65,7 +64,7 @@ public class GymClasses extends AppCompatActivity {
 
             @Override
             public boolean onQueryTextChange(String newText) {
-                filter(newText); // Inside onQueryTextChange method we are calling a method to filter our recycler view.
+                filter(newText);
                 return false;
             }
         });
@@ -73,17 +72,19 @@ public class GymClasses extends AppCompatActivity {
         return true;
     }
 
-
     private void filter(String text) {
 
-        ModelSearchList = new ArrayList<ModelGymClasses>(); // Creating a new array list to filter our data. // Must be here
-        for (ModelGymClasses item : ModelGymClasses) { // Running a for loop to compare elements.
+        ModelSearchList = new ArrayList<ModelGymClasses>();
+        for (ModelGymClasses item : ModelGymClasses) {
 
-            if (item.getInClassName().toLowerCase().contains(text.toLowerCase()) || item.getInClassDate().toLowerCase().contains(text.toLowerCase()) ) { // Checking if the entered string matched with any item of our recycler view.
-                ModelSearchList.add(item); // If the item is matched, add it to our filtered list.
+            if (item.getInClassName().toLowerCase().contains(text.toLowerCase()) || item.getInClassDay().toLowerCase().contains(text.toLowerCase())
+                    || item.getInClassTrainer().toLowerCase().contains(text.toLowerCase()) || item.getInClassDuration().toLowerCase().contains(text.toLowerCase())
+                    || item.getInClassTime().toLowerCase().contains(text.toLowerCase()) ){
+
+                ModelSearchList.add(item);
             }
 
-            AdapterGymClasses.AdapterSearchList(ModelSearchList); // Passing the filtered list to our adapter class.
+            AdapterGymClasses.AdapterSearchList(ModelSearchList);
         }
 
     }
@@ -102,17 +103,50 @@ public class GymClasses extends AppCompatActivity {
                             String Details = documentSnapshot.getString("Class Details");
                             String Trainer = documentSnapshot.getString("Class Trainer");
                             String Duration = documentSnapshot.getString("Class Duration");
-                            String Date = documentSnapshot.getString("Class Date");
+                            String Day = documentSnapshot.getString("Class Day");
                             String Time = documentSnapshot.getString("Class Time");
+                            String Limit = documentSnapshot.getString("Class Limit");
+                            String Category = documentSnapshot.getString("Class Category");
+                            String MaxLimit = documentSnapshot.getString("Class Max Limit");
 
-                            // Constructor from model and use it to get Firestore data
-                            ModelGymClasses GymClasses = new ModelGymClasses(Name,Details,Trainer,Duration,Date,Time);
+
+                            ModelGymClasses GymClasses = new ModelGymClasses(Name,Details,Trainer,Duration,Day,Time,Limit,Category,MaxLimit);
                             ModelGymClasses.add(GymClasses);
                         }
 
                         AdapterGymClasses.notifyDataSetChanged();
                     }
                 });
+    }
 
+    private void statisticGymClasses(){
+        fStore.collection("Statistics")
+                .document("Gym Classes")
+                .get()
+                .addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        String statistics = documentSnapshot.getString("Total Bookings");
+                        statistic = Integer.parseInt(statistics);
+                    }
+                });
+    }
+
+
+
+    public void CardioClick(View view) { filter("Cardio"); }
+
+    public void StrengthClick(View view) { filter("Strength"); }
+
+    public void MindClick(View view) {
+        filter("Mind");
+    }
+
+    public void HiltClick(View view) {
+        filter("Hilt");
+    }
+
+    public void CyclingClick(View view) {
+        filter("Cycling");
     }
 }

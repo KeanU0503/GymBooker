@@ -4,71 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register">
+    tools:context=".Register"
+    android:background="@drawable/register_background">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/reg_dumBell"
-            android:layout_width="wrap_content"
-            android:layout_height="200dp"
-            android:src="@drawable/dum_bell">
-        </ImageView>
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:padding="30dp">
 
         <EditText
             android:id="@+id/atyFullName"
             android:layout_width="match_parent"
             android:layout_height="37dp"
             android:layout_marginTop="60dp"
-            android:inputType="textPersonName"
+            android:background="@drawable/custom_edit_text"
             android:hint="Full Name"
-            android:background="@drawable/custom_input"
+            android:inputType="textPersonName"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp"/>
+            android:paddingEnd="12dp" />
 
         <EditText
             android:id="@+id/atyEmailRegister"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_text"
             android:drawableStart="@drawable/custom_email_icon"
             android:drawablePadding="17dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp"/>
+            android:paddingEnd="12dp" />
 
         <EditText
             android:id="@+id/atyPasswordRegister"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:hint="Password"
-            android:inputType="textPassword"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_text"
             android:drawableStart="@drawable/custom_password_icon"
             android:drawablePadding="17dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
+            android:hint="Password"
+            android:inputType="textPassword"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp"/>
+            android:paddingEnd="12dp" />
 
         <EditText
             android:id="@+id/atyContactNumber"
             android:layout_width="match_parent"
             android:layout_height="37dp"
-            android:hint="Contact Number"
-            android:inputType="textPhonetic"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_text"
             android:drawableStart="@drawable/custom_contact_number_icon"
             android:drawablePadding="17dp"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/custom_input"
+            android:hint="Contact Number"
+            android:inputType="textPhonetic"
             android:paddingStart="12dp"
-            android:paddingEnd="12dp">
-        </EditText>
+            android:paddingEnd="12dp"></EditText>
 
         <Button
             android:id="@+id/atySignUp"
@@ -76,17 +70,18 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
-            android:text="Sign Up">
-        </Button>
+            android:background="@drawable/custom_button_orange"
+            android:text="Sign Up"
+            android:textColor="@color/white" />
 
         <TextView
             android:id="@+id/atyToLogin"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:text="Head to Login"
-            android:layout_gravity="center">
-        </TextView>
+            android:textColor="@color/blue"></TextView>
 
     </LinearLayout>
 

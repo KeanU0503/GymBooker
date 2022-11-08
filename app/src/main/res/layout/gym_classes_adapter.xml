@@ -15,62 +15,75 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:padding="0dp">
 
         <TextView
             android:id="@+id/gymClasses_Name"
-            android:layout_width="230dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
-            android:text="Class Name:"
+            android:text="Cardio"
             android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold" />
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="2dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="173dp"
+            android:layout_toStartOf="@+id/gymClasses_Duration"
+            android:layout_toEndOf="@+id/gymClasses_Name"
+            android:text="(class)"
+            android:textSize="10sp" />
 
         <TextView
             android:id="@+id/gymClasses_Duration"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/gymClasses_Name"
             android:layout_alignParentRight="true"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_toRightOf="@+id/gymClasses_Name"
-            android:text="90 min"
+            android:layout_marginTop="13dp"
+            android:layout_marginEnd="28dp"
+            android:text="120 min"
             android:textAlignment="textEnd"
-            android:textColor="@color/black"
-            android:textSize="12sp"
             android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gymClasses_Details"
-            android:layout_width="200dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/gymClasses_Name"
-            android:layout_marginStart="10dp"
-            android:layout_marginTop="20dp"
+            android:layout_margin="20dp"
+            android:layout_marginTop="10dp"
             android:drawablePadding="2dp"
-            android:text="Class Details:" />
+            android:text="Class Details:"
+            android:textAlignment="gravity" />
 
         <TextView
-            android:id="@+id/gymClasses_Date"
+            android:id="@+id/gymClasses_Day"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/gymClasses_Trainer"
             android:layout_marginStart="10dp"
             android:layout_marginTop="10dp"
             android:drawablePadding="2dp"
-            android:text="Sun - 09/10/2022" />
+            android:text="Someday"
+            android:textSize="17sp" />
 
         <TextView
             android:id="@+id/gymClasses_Time"
             android:layout_width="200dp"
             android:layout_height="wrap_content"
-            android:layout_below="@id/gymClasses_Date"
+            android:layout_below="@id/gymClasses_Day"
             android:layout_marginStart="10dp"
             android:layout_marginBottom="10dp"
             android:drawablePadding="2dp"
-            android:text="12:00PM" />
+            android:text="12:00PM"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gymClasses_Trainer"
@@ -78,9 +91,23 @@
             android:layout_height="wrap_content"
             android:layout_below="@id/gymClasses_Details"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="80dp"
+            android:layout_marginTop="70dp"
             android:drawablePadding="2dp"
-            android:text="Class Trainer:" />
+            android:textColor="@color/orange"
+            android:text="Class Trainer"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/gymClasses_MaxLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/gymClasses_Trainer"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="28dp"
+            android:text="Max Limit: 8"
+            android:textAlignment="textEnd"
+            android:textStyle="bold" />
 
         <TextView
             android:id="@+id/gymClasses_ClassLimit"
@@ -88,9 +115,9 @@
             android:layout_height="wrap_content"
             android:layout_alignTop="@+id/gymClasses_bookNow"
             android:layout_alignParentEnd="true"
-            android:layout_marginTop="-20dp"
-            android:layout_marginEnd="40dp"
-            android:text="Number"
+            android:layout_marginTop="-30dp"
+            android:layout_marginEnd="28dp"
+            android:text="Current: 8"
             android:textStyle="bold" />
 
         <Button
@@ -98,12 +125,28 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@id/gymClasses_Details"
-            android:layout_alignParentRight="true"
-            android:layout_marginTop="100dp"
-            android:layout_marginRight="20dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
+            android:background="@drawable/curve_rectangle_pearl_white"
             android:drawablePadding="2dp"
             android:text="Book Now" />
+
+        <Button
+            android:id="@+id/gymClasses_editClass"
+            android:layout_width="95dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/gymClasses_Details"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="120dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/curve_rectangle_pearl_white"
+            android:drawablePadding="2dp"
+            android:text="Edit" />
+
+
 
     </RelativeLayout>
 

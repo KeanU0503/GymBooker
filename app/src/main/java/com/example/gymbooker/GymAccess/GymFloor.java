@@ -1,4 +1,4 @@
-package com.example.gymbooker;
+package com.example.gymbooker.GymAccess;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
@@ -14,6 +14,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.gymbooker.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.EventListener;
@@ -28,25 +30,29 @@ public class GymFloor extends AppCompatActivity {
 
     // The type and the name of the variables
     ListView listview;
-    TextView tvDate, tvSelDate, tvSelTime, tvSelDuration, tvGymFloorTitle;
+    TextView tvSelDate, tvSelTime, tvSelDuration, tvGymFloorTitle;
     Button btDate, btNext;
     RadioGroup rdGroup;
     RadioButton rdButton;
 
-    Calendar theCalender = Calendar.getInstance();
+    Calendar calender = Calendar.getInstance();
     DatePickerDialog showDatePicker;
-    ArrayList<String> LocalModelTime; // Type of data it will hold (references to String)
+    ArrayList<String> StringModelTime; // Type of data it will hold (references to String)
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) { // Method
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_gym_floor);
+        setContentView(R.layout.gym_floor);
+        getSupportActionBar().hide();
+
+        Intent intent = getIntent();
+
+        String userName = intent.getStringExtra("Client Name");
 
         listview = findViewById(R.id.listViewTime);
-        tvDate = findViewById(R.id.gym_floor_desDate);
         tvSelDate = findViewById(R.id.gym_floor_selectedDate);
         tvSelTime = findViewById(R.id.gym_floor_selectedTime);
         tvSelDuration = findViewById(R.id.gym_floor_selectedDuration);
@@ -55,12 +61,11 @@ public class GymFloor extends AppCompatActivity {
         btNext = findViewById(R.id.gym_floor_next);
         rdGroup = findViewById(R.id.radioGroup);
 
-        LocalModelTime = new ArrayList<String>();
+        StringModelTime = new ArrayList<String>();
 
-        //  Calendar settings
-        int dayOfMonth = theCalender.get(Calendar.DAY_OF_MONTH);
-        int month = theCalender.get(Calendar.MONTH);
-        int year = theCalender.get(Calendar.YEAR);
+        int dayOfMonth = calender.get(Calendar.DAY_OF_MONTH);
+        int month = calender.get(Calendar.MONTH);
+        int year = calender.get(Calendar.YEAR);
 
         btDate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +73,7 @@ public class GymFloor extends AppCompatActivity {
 
                 showDatePicker = new DatePickerDialog(GymFloor.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
-                    // User selects the date
+
                     public void onDateSet(DatePicker datePicker, int year , int month, int day) {
                         String chosenDate = day + "/" + (month + 1) + "/" + year;
                         tvSelDate.setText(chosenDate);
@@ -92,10 +97,11 @@ public class GymFloor extends AppCompatActivity {
                 String passGymFloorTitle = tvGymFloorTitle.getText().toString();
 
                 Intent toVerify = new Intent(view.getContext(), GymFloorBooking.class);
-                toVerify.putExtra("GymFloor", passGymFloorTitle);
+                toVerify.putExtra("Gym Floor", passGymFloorTitle);
                 toVerify.putExtra("Duration", selectedDuration);
                 toVerify.putExtra("Date", selectedDate);
                 toVerify.putExtra("Time", selectedTime);
+                toVerify.putExtra("Client Name", userName);
 
                 view.getContext().startActivity(toVerify);
             }
@@ -104,37 +110,35 @@ public class GymFloor extends AppCompatActivity {
         readCheckoutInformationDB();
     }
 
-    public void rbClick(View view) { // Void does not return anything
+    public void rbClick(View view) {
 
         int radioSelected = rdGroup.getCheckedRadioButtonId();
         rdButton = findViewById(radioSelected);
         tvSelDuration.setText(rdButton.getText());
-
     }
 
-    private void readCheckoutInformationDB() { // Method
+
+    private void readCheckoutInformationDB() {
 
         fStore.collection("Time Slots").orderBy("Time", Query.Direction.ASCENDING).addSnapshotListener(new EventListener<QuerySnapshot>() {
             @Override
             public void onEvent(QuerySnapshot documentSnapshots, FirebaseFirestoreException error) {
-                LocalModelTime.clear();
+                StringModelTime.clear();
 
                 for (DocumentSnapshot snapshot : documentSnapshots){
-                    LocalModelTime.add(snapshot.getString("Time"));
+                    StringModelTime.add(snapshot.getString("Time"));
                 }
 
-                // Converts data from the data sources into view items that can be displayed into the UI Component.
-                ArrayAdapter<String>adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_single_choice,LocalModelTime);
+
+                ArrayAdapter<String>adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_single_choice, StringModelTime);
                 listview.setChoiceMode(ListView.CHOICE_MODE_SINGLE);
                 listview.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
 
-                // Display the list
+
                 listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
-                    // AdapterView = the click response of the adapterView
-                    // View = clicked
-                    // Long = row id of the item that was clicked
+
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                         String time = (String) adapterView.getItemAtPosition(position);
                         Toast.makeText(GymFloor.this, "Selected: " + time, Toast.LENGTH_SHORT).show();

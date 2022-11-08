@@ -8,4 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="theme_color">#2176FF</color>
+    <color name="blue">#637DF6</color>
+    <color name="lighter_blue">#CFD8F9</color>
+    <color name="orange">#FF914D</color>
+    <color name="grey">#BBBBBB</color>
+    <color name="pearl_white">#F0F2FF</color>
+    <color name="dark_pink">#EA3180</color>
+    <color name="bright_blue">#5CE1E6</color>
+
 </resources>

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:padding="0dp"
+    tools:context=".Admin.AdminHome">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/user_Welcome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Welcome"
+                android:textColor="@color/blue"
+                android:textSize="50sp"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="20dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/show_adminName"
+                android:layout_marginTop="25dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/orange"
+                android:layout_marginStart="-10dp"
+                android:textSize="18sp"
+                android:text="Admin"/>
+
+            <Button
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="-10dp"
+                android:onClick="logoutAdmin"
+                android:textColor="@color/blue"
+                android:background="@drawable/curve_rectangle_pearl_white"
+                android:text="Log Out"/>
+
+        </LinearLayout>
+
+<!--2nd layer-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="30dp"
+        android:layout_height="170dp">
+
+
+<!--Gym Classes-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="80dp"
+            android:layout_height="142dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="10dp"
+            app:cardPreventCornerOverlap="true">
+
+            <TextView
+                android:id="@+id/act_gymClassBooking"
+                android:layout_width="70dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adminHome_gymClassBooking"
+                android:layout_alignBottom="@+id/adminHome_gymClassBooking"
+                android:layout_marginStart="5dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginBottom="-50dp"
+                android:text="Gym Classes"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/adminHome_gymClassBooking"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="55dp"
+                android:layout_marginEnd="85dp"
+                android:text="88"
+                android:textAlignment="center"
+                android:textSize="50sp" />
+        </androidx.cardview.widget.CardView>
+
+<!--Gym Floor-->
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="20dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="10dp"
+            app:cardPreventCornerOverlap="true">
+
+            <TextView
+                android:id="@+id/act_gymFloorBooking"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adminHome_gymFloorBooking"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="-50dp"
+                android:text="Gym Floor"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/adminHome_gymFloorBooking"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="65dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginEnd="55dp"
+                android:text="88"
+                android:textAlignment="center"
+                android:textSize="50sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="120dp"
+            android:layout_marginTop="100dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="8dp"
+            app:cardMaxElevation="10dp"
+            app:cardPreventCornerOverlap="true">
+
+            <TextView
+                android:id="@+id/act_gymFloorBookingTrainers"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/adminHome_gymFloorBookingTrainers"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="-50dp"
+                android:text="Gym Floor Trainer"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/adminHome_gymFloorBookingTrainers"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="105dp"
+                android:layout_marginTop="-5dp"
+                android:layout_marginEnd="55dp"
+                android:text="88"
+                android:textAlignment="center"
+                android:textSize="50sp" />
+
+        </androidx.cardview.widget.CardView>
+
+
+    </RelativeLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:layout_marginStart="35dp"
+            android:orientation="horizontal">
+
+                <!--Chats-->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginStart="5dp"
+                android:background="@drawable/curve_rectangle_blue">
+
+                <TextView
+                    android:id="@+id/act_tv_adminChats"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="110dp"
+                    android:text="Chats"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/image_adminChats"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/admin_chats" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="150dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/curve_rectangle_orange">
+
+                <TextView
+                    android:id="@+id/adminHome_bookingHistory"
+                    android:layout_width="90dp"
+                    android:layout_height="wrap_content"
+
+                    android:layout_marginTop="100dp"
+                    android:text="Booking History"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="85dp"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/admin_history_booking" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="85dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/curve_rectangle_dark_pink">
+
+                <TextView
+                    android:id="@+id/adminEdit"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="100dp"
+                    android:text="Edit Profile"
+                    android:textAlignment="center"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/admin_edit_profile" />
+            </RelativeLayout>
+
+            <!--Quick Edit Profile-->
+
+
+        </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="190dp"
+        android:layout_marginBottom="50dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curve_rectangle_orange" />
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="30dp"
+            android:background="@drawable/curve_rectangle_blue" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="130dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/curve_rectangle_pearl_white">
+
+            <TextView
+                android:id="@+id/adminHome_manageGym"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="182dp"
+                android:layout_marginTop="55dp"
+                android:text="Manage Gym"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/image_adminManageGym"
+            android:layout_width="90dp"
+            android:layout_height="95dp"
+            android:layout_marginStart="75dp"
+            android:layout_marginTop="40dp"
+            android:background="@drawable/admin_manage_gym"/>
+
+    </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
+
+
+
+
+

@@ -3,10 +3,13 @@ package com.example.gymbooker;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.viewpager2.widget.ViewPager2;
+
 import android.os.Bundle;
 import com.example.gymbooker.Adapter.AdapterChatList;
 import com.example.gymbooker.Model.ModelChatList;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -15,17 +18,18 @@ import java.util.ArrayList;
 
 public class ChatList extends AppCompatActivity {
 
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+
     RecyclerView RecChatList;
     AdapterChatList adaptChatList;
     ArrayList<ModelChatList> arrayModelChatList;
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_chat_list);
+        setContentView(R.layout.chat_list);
+        getSupportActionBar().hide();
 
         RecChatList = findViewById(R.id.RV_ChatList);
         RecChatList.setHasFixedSize(true);
@@ -50,10 +54,10 @@ public class ChatList extends AppCompatActivity {
                         for (int x=0; x<queryDocumentSnapshots.size(); x++){
                             DocumentSnapshot documentSnapshot = queryDocumentSnapshots.getDocuments().get(x);
 
-                            String Name = documentSnapshot.getString("FullName");
-                            String Uid = documentSnapshot.getId();
+                            String Name = documentSnapshot.getString("Full Name");
+                            String UserID = documentSnapshot.getId();
 
-                            ModelChatList fStoreModelChatList = new ModelChatList(Name, Uid);
+                            ModelChatList fStoreModelChatList = new ModelChatList(Name, UserID);
                             arrayModelChatList.add(fStoreModelChatList);
                         }
 

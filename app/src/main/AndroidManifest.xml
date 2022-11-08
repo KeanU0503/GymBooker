@@ -14,31 +14,53 @@
         android:theme="@style/Theme.GymBooker"
         tools:targetApi="31">
         <activity
-            android:name=".ViewChatMessages"
+            android:name=".ManageGym"
             android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminGymHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminEditGymFloor"
+            android:exported="false" />
+        <activity
+            android:name=".Admin.AdminEditClasses"
+            android:exported="false" />
+        <activity
+            android:name=".GymAccess.GymFloorTrainers"
+            android:exported="false" />
+        <activity
+            android:name=".ViewChatMessages"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan"/>
         <activity
             android:name=".ChatList"
             android:exported="false" />
         <activity
-            android:name=".GymClasses"
+            android:name=".GymAccess.GymClasses"
             android:exported="false" />
         <activity
             android:name=".GymHistory"
             android:exported="false" />
         <activity
-            android:name=".GymFloorBooking"
+            android:name=".GymAccess.GymFloorBooking"
             android:exported="false" />
         <activity
-            android:name=".GymFloor"
+            android:name=".GymAccess.GymFloor"
             android:exported="false" />
         <activity
-            android:name=".GymAccess"
+            android:name=".GymAccess.GymAccess"
             android:exported="false" />
         <activity
             android:name=".Register"
             android:exported="false" />
         <activity
-            android:name=".AdminHome"
+            android:name=".Admin.AdminHome"
             android:exported="false" />
         <activity
             android:name=".Login"

@@ -6,12 +6,28 @@
     <TextView
         android:id="@+id/text_sendMessages"
         android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:background="@drawable/curve_rectangle_orange"
+        android:padding="10dp"
+        android:text="Text"
+        android:textAlignment="textEnd"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/display_senderTime"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="txt"
+        android:layout_below="@+id/text_sendMessages"
         android:layout_alignParentEnd="true"
         android:layout_marginEnd="30dp"
-        android:padding="10dp"
-        android:textStyle="bold">
-    </TextView>
+        android:text="Time"
+        android:textAlignment="textEnd"
+        android:textColor="@color/blue"
+        android:textSize="10sp" />
 
 </RelativeLayout>

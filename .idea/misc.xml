@@ -5,62 +5,121 @@
       <map>
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/background_admin_home.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_blue.xml" value="0.1395" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_bright_blue.xml" value="0.1605" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_light_blue.xml" value="0.1605" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_light_pink.xml" value="0.1605" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_orange.xml" value="0.1395" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_pearl_white.xml" value="0.1395" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/curve_rectangle_pink.xml" value="0.1395" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_button_blue.xml" value="0.1395" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_button_orange.xml" value="0.1395" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_contact_number_icon.xml" value="0.1435" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_edit_text.xml" value="0.1605" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_email_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_input.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_input_button.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/custom_password_icon.xml" value="0.1435" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/focused_button.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/focused_button_blue.xml" value="0.1605" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/focused_contact_number.xml" value="0.1435" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/focused_email.xml" value="0.1435" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/focused_password.xml" value="0.1435" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_back.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_contact_number.xml" value="0.14" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_email.focused.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_email.xml" value="0.14" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1605" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.1435" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_password.xml" value="0.14" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_people.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_search.xml" value="0.1105" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_send.xml" value="0.1115" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_splashscreen.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/ic_test.xml" value="0.1115" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/my_button_bg.xml" value="0.136" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/round_back_theme.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/round_back_theme_1000.xml" value="0.1605" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/drawable/username.xml" value="0.14" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_admin_edit_classes.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_admin_gym_history.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_chat_list.xml" value="0.22962962962962963" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_chat_view.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_chats.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_gym_classes.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_gym_history.xml" value="0.2059800664451827" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_gym_history.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_gym_trainer.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_gym_trainers.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_people.xml" value="0.17391304347826086" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_adapter_view_chat_messages.xml" value="0.23958333333333334" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_home.xml" value="0.22" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_edit_classes.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_edit_gym_floor.xml" value="0.2884963768115942" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_gym_history.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_admin_manage.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_chat.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_chat_list.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_chat_room.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_chat_view.xml" value="0.27696793002915454" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_chats.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_edit_profile.xml" value="0.290625" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_access.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_classes.xml" value="0.2150170648464164" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_floor.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_floor_adapter.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_floor_booking.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_floor_trainer.xml" value="0.2828282828282828" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_floor_trainer_time.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_gym_history.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_history_fragment.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_listview.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_login.xml" value="0.290625" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_main.xml" value="0.2871376811594203" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_manage_gym.xml" value="0.1" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_participation.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_people.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_profile.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_register.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_splash_screen.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_splash_screen.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_user_booking.xml" value="0.3046875" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_user_home.xml" value="0.2944606413994169" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_user_home.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_verify_booking.xml" value="0.290625" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/activity_view_chat_messages.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/admin_edit_classes.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/admin_edit_gym_floor.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/admin_gym_history.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/admin_home.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/chat_leftside.xml" value="0.23731884057971014" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/chat_list.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/chat_list_adapter.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/chat_rightside.xml" value="0.23324275362318841" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/chat_users.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/draft.xml" value="0.22" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/edit_profile.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_access.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_classes.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_classes_adapter.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_floor.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_floor_booking.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_floor_trainers.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_floor_trainers_adapter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_history.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_history_adapter.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/gym_trainers_adapter.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/login.xml" value="0.22" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/message.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/messages_adpater_layout.xml" value="0.3046875" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/receiver_layout.xml" value="0.3333333333333333" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/sender_layout.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/profile.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/receiver_layout.xml" value="0.5" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/register.xml" value="0.27631578947368424" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/sender_layout.xml" value="0.4466666666666667" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/splash_screen.xml" value="0.22" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/user_home.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/view_chat_messages.xml" value="0.3046875" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/layout/view_chat_messages_adapter.xml" value="0.3046875" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/menu/display_user.xml" value="0.30364583333333334" />
-        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/menu/search_gym_classes.xml" value="0.1" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/menu/menu_search_bar.xml" value="0.22" />
+        <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/menu/search_gym_classes.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1435" />
         <entry key="..\:/Users/Lau Poh Hooi/AndroidStudioProjects/GymBooker/app/src/main/res/xml/editext.xml" value="0.2871376811594203" />
       </map>

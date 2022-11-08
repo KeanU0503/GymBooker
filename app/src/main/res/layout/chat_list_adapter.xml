@@ -4,28 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
     app:cardBackgroundColor="@color/white"
-    app:cardCornerRadius="8dp"
     app:cardElevation="8dp"
     app:cardMaxElevation="10dp"
     app:cardPreventCornerOverlap="true"
     app:cardUseCompatPadding="true"
-    tools:context=".Adapter.AdapterPeople">
+    tools:context=".Adapter.AdapterChatList">
 
-    <LinearLayout
-        android:padding="17dp"
+    <TextView
+        android:id="@+id/chatList_displayUser"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/adp_peopleName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:hint="Name:"
-            android:textSize="20sp"/>
-
-    </LinearLayout>
+        android:layout_height="35dp"
+        android:text="Display User"
+        android:layout_margin="10dp"
+        android:textSize="20sp"/>
 
 </androidx.cardview.widget.CardView>

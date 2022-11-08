@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/login_background"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="30dp">
+
+        <EditText
+            android:id="@+id/atyEmailLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="380dp"
+            android:background="@drawable/custom_edit_text"
+            android:drawableStart="@drawable/custom_email_icon"
+            android:drawablePadding="17dp"
+            android:hint="Email"
+            android:inputType="textEmailAddress"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/blue" />
+
+        <EditText
+            android:id="@+id/atyPasswordLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/custom_edit_text"
+            android:drawableStart="@drawable/custom_password_icon"
+            android:drawablePadding="17dp"
+            android:hint="Password"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:paddingEnd="12dp"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/atyForgot"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="100dp"
+            android:layout_marginTop="1dp"
+            android:text="Forgot Password"
+            android:textAlignment="textEnd"
+            android:textColor="@color/blue"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/atyLogin"
+            android:layout_width="237dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/custom_button_blue"
+            android:text="Login"
+            android:textColor="@color/blue" />
+
+        <TextView
+            android:id="@+id/atyToRegister"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="6dp"
+            android:text="Head to Register"
+            android:textColor="@color/blue"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+</RelativeLayout>

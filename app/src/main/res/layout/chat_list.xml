@@ -4,10 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".People">
+    android:background="@color/pearl_white"
+    tools:context=".ChatList">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/RV_People"
+        android:id="@+id/RV_ChatList"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 

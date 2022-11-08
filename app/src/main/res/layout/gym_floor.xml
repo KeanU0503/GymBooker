@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".GymAccess.GymFloor"
+    android:padding="20dp"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/gymFloor_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Gym Floor"
+        android:textSize="27sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Duration: "/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginTop="7dp"
+        android:orientation="vertical"
+        android:layout_margin="5dp"
+        android:background="@color/pearl_white">
+
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="7dp">
+
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbClick"
+                android:text="45 min" />
+
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="-33dp"
+                android:onClick="rbClick"
+                android:text="60 min" />
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="200dp"
+                android:layout_marginTop="-32dp"
+                android:onClick="rbClick"
+                android:text="90 min"/>
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="rbClick"
+                android:text="120 min" />
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="-25dp"
+                android:onClick="rbClick"
+                android:text="180 min" />
+        </RadioGroup>
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/gym_floor_showDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:textSize="10sp"
+            android:text="Pick a date"
+
+            android:textColor="@color/white"
+            android:background="@drawable/curve_rectangle_blue">
+
+        </Button>
+
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/listViewTime"
+        android:layout_width="match_parent"
+        android:layout_height="270dp"
+        android:divider="@color/black"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="10dp"
+        android:dividerHeight="2dp">
+
+    </ListView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:layout_margin="2dp"
+        android:background="@color/pearl_white">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/act_selectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="15sp"
+                android:hint="Date: "/>
+
+            <TextView
+                android:id="@+id/gym_floor_selectedDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/act_selectedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:hint="Time: "/>
+
+            <TextView
+                android:id="@+id/gym_floor_selectedTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:id="@+id/act_selectedDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="Duration: "
+                android:textStyle="bold"
+                android:textSize="15sp"/>
+
+            <TextView
+                android:id="@+id/gym_floor_selectedDuration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="2dp"
+                android:layout_marginTop="10dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:id="@+id/gym_floor_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Next"
+            android:background="@drawable/curve_rectangle_blue"
+            android:textColor="@color/white">
+
+        </Button>
+    </LinearLayout>
+    </LinearLayout>

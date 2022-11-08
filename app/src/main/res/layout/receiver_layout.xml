@@ -6,11 +6,22 @@
     <TextView
         android:id="@+id/text_receiveMessages"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="txt"
-        android:layout_marginStart="30dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/curve_rectangle_blue"
         android:padding="10dp"
-        android:textStyle="bold">
-    </TextView>
+        android:text="Text"
+        android:textColor="@color/white"
+        android:textStyle="bold" />
+    <TextView
+        android:id="@+id/display_receiverTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_receiveMessages"
+        android:layout_marginStart="30dp"
+        android:textSize="10sp"
+        android:textColor="@color/orange"
+        android:text="Time" />
 
 </RelativeLayout>

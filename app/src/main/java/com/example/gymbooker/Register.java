@@ -31,19 +31,18 @@ public class Register extends AppCompatActivity {
     EditText etFullName, etEmail, etPassword, etContactNumber;
     Button btSignUp;
     TextView tvToLogin;
-    ImageView irDumBell;
 
     FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    String UserID;
     FirebaseDatabase fDatabase = FirebaseDatabase.getInstance();
-    String UserID = fAuth.getCurrentUser().getUid();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.register);
+        getSupportActionBar().hide();
 
-        irDumBell = findViewById(R.id.reg_dumBell);
         etFullName = findViewById(R.id.atyFullName);
         etEmail = findViewById(R.id.atyEmailRegister);
         etPassword = findViewById(R.id.atyPasswordRegister);
@@ -63,9 +62,6 @@ public class Register extends AppCompatActivity {
 
                 if(TextUtils.isEmpty(FullName)){
                     etFullName.setError("Please enter your full name.");
-//                  requestFocus()
-//                  try to give focus to a specific view or to one of its descendants and give it hints
-//                  about the direction and a specific rectangle that the focus is coming from.
                     etFullName.requestFocus();
                     return;
                 }
@@ -94,7 +90,9 @@ public class Register extends AppCompatActivity {
                     return;
                 }
 
-                fAuth.createUserWithEmailAndPassword(etEmail.getText().toString(),etPassword.getText().toString()).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
+
+                fAuth.createUserWithEmailAndPassword(etEmail.getText().toString(),etPassword.getText().toString())
+                        .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
 
@@ -103,16 +101,16 @@ public class Register extends AppCompatActivity {
 
                         DocumentReference df = fStore.collection("Accounts").document(user.getUid());
                         Map<String,Object> userInfo = new HashMap<>();
-                        userInfo.put("FullName",etFullName.getText().toString());
+                        userInfo.put("Full Name",etFullName.getText().toString());
                         userInfo.put("Email",etEmail.getText().toString());
                         userInfo.put("Password",etPassword.getText().toString());
-                        userInfo.put("ContactNumber",etContactNumber.getText().toString());
-                        userInfo.put("isUser","1");
+                        userInfo.put("Contact Number",etContactNumber.getText().toString());
+                        userInfo.put("User","1");
 
-                        ModelChatList users = new ModelChatList(FullName,UserID);
-                        reference.setValue(users); // save it to RT-database
+                        ModelChatList users = new ModelChatList(FullName, null);
 
-                        df.set(userInfo); // save it to FS-database
+                        reference.setValue(users);
+                        df.set(userInfo);
 
                         Toast.makeText(Register.this, "Your account has been created", Toast.LENGTH_SHORT).show();
 

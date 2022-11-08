@@ -22,8 +22,8 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
     Context context;
 
     private FirebaseFirestore fStore;
-    FirebaseAuth firebaseAuth;
-    String userID;
+    private FirebaseAuth fAuth;
+    private String userID;
 
     public AdapterChatList(ArrayList<ModelChatList> arrayModelChatList, Context context) {
         this.arrayModelChatList = arrayModelChatList;
@@ -33,7 +33,7 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
     @NonNull
     @Override
     public AdapterChatList.ChatListHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_adapter_chat_list,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.chat_list_adapter,parent,false);
         return new AdapterChatList.ChatListHolder(view);
     }
 
@@ -41,8 +41,8 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
     public void onBindViewHolder(@NonNull AdapterChatList.ChatListHolder holder, int position) {
 
         fStore = FirebaseFirestore.getInstance();
-        firebaseAuth = FirebaseAuth.getInstance();
-        userID=firebaseAuth.getCurrentUser().getUid();
+        fAuth = FirebaseAuth.getInstance();
+        userID = fAuth.getCurrentUser().getUid();
 
         final ModelChatList users = arrayModelChatList.get(position);
         final String names = users.getInName();
@@ -53,8 +53,8 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
             @Override
             public void onClick(View view) { // context - homeActivity
                 Intent intent = new Intent(context, ViewChatMessages.class);
-                intent.putExtra("Name",users.getInName());
-                intent.putExtra("Uid",users.getInUid());
+                intent.putExtra("Full Name",users.getInName());
+                intent.putExtra("User ID",users.getInUid());
 
                 context.startActivity(intent);
             }
