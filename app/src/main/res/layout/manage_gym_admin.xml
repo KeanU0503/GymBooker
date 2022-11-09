@@ -30,7 +30,7 @@
                 android:id="@+id/edit_gymFloor"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Gym Floor"
+                android:text="Gym Floor Trainers"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textSize="27sp"

@@ -46,7 +46,6 @@ public class UserHome extends AppCompatActivity {
         GA_image = findViewById(R.id.act_gymAccess_image);
         GH_image = findViewById(R.id.act_gymHistory_image);
 
-        // Listen to data changes or retrieve in the database
         dReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot documentSnapshot, @Nullable FirebaseFirestoreException error) {

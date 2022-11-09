@@ -29,8 +29,7 @@
                 android:id="@+id/adp_GymHistory_selectedDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="10dp"
-                android:text="Saturday"
+                android:text="Wednesday"
                 android:textAlignment="center"
                 android:textColor="@color/dark_pink"
                 android:textSize="23sp"
@@ -52,7 +51,6 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal">
 
@@ -78,8 +76,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp">
+                android:layout_height="wrap_content">
 
                 <TextView
                     android:id="@+id/act_Time"
@@ -121,7 +118,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
                 android:layout_marginTop="20dp"
-                android:layout_marginEnd="20dp"
+                android:layout_marginEnd="25dp"
                 android:layout_marginBottom="10dp"
                 android:text="Strength Conditioning"
                 android:textAlignment="textEnd"

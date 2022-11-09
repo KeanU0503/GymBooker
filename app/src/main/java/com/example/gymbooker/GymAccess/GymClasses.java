@@ -85,6 +85,7 @@ public class GymClasses extends AppCompatActivity {
             }
 
             AdapterGymClasses.AdapterSearchList(ModelSearchList);
+
         }
 
     }

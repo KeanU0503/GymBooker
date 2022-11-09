@@ -18,12 +18,13 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Objects;
 
 public class AdapterGymHistory extends RecyclerView.Adapter<AdapterGymHistory.GymHistoryHolder> {
 
     ArrayList<ModelGymHistory> ModelGymHistory;
-    Context context; // pass background information / relation to / what has been going on / access & communicate
+    Context context;
     String userType;
 
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();

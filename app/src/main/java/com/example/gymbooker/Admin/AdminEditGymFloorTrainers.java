@@ -16,7 +16,7 @@ import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.sql.Time;
 
-public class AdminEditGymFloor extends AppCompatActivity {
+public class AdminEditGymFloorTrainers extends AppCompatActivity {
 
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private FirebaseAuth fAuth =  FirebaseAuth.getInstance();
@@ -47,7 +47,7 @@ public class AdminEditGymFloor extends AppCompatActivity {
         String duration = i.getStringExtra(("Duration"));
         String details = i.getStringExtra(("Details"));
         String slotLimit = i.getStringExtra(("Limit"));
-        String trainerCategory = i.getStringExtra(("Trainer Category")); // Only for reference document
+        String trainerCategory = i.getStringExtra(("Trainer Category"));
         String time = i.getStringExtra(("Time"));
 
         etEditTrainer.setText(gymTrainer);

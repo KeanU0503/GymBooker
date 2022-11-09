@@ -31,8 +31,8 @@ public class Login extends AppCompatActivity {
     Button btLogin;
     TextView tvToRegister,tvForgot;
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,7 +120,7 @@ public class Login extends AppCompatActivity {
         });
     }
 
-    // Check user or admin
+
     private void checkUserType(String uid) {
         DocumentReference dReference = fStore.collection("Accounts").document(uid);
         dReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {

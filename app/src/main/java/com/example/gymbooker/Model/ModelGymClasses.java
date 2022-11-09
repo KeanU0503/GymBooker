@@ -6,7 +6,6 @@ public class ModelGymClasses {
 
     private String inClassName, inClassDetails, inClassTrainer, inClassDuration, inClassDay, inClassTime, inClassLimit, inClassCategory, inMaxLimit; // Java object
 
-    // Constructors
     public ModelGymClasses(String ClassName, String ClassDetails, String ClassTrainer, String ClassDuration, String ClassDay, String ClassTime, String ClassLimit, String ClassCategory, String MaxLimit) {
 
         inClassName = ClassName;
@@ -20,7 +19,6 @@ public class ModelGymClasses {
         inMaxLimit = MaxLimit;
     }
 
-    // access the model with getter and setter methods
     public String getInClassName() { return inClassName; }
 
     public void setInClassName(String inClassName) { this.inClassName = inClassName; } // referring to the field (String) on the object that this method was called

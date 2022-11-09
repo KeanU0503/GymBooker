@@ -24,10 +24,10 @@ import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class AdminHome extends AppCompatActivity {
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    String UserID = fAuth.getCurrentUser().getUid();
-    DocumentReference dReference = fStore.collection("Accounts").document(UserID);
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private String UserID = fAuth.getCurrentUser().getUid();
+    private DocumentReference dReference = fStore.collection("Accounts").document(UserID);
 
     TextView tvManageGym, tvUserBooking, tvTrainerBooking ,tvTotalGymClasses, tvTotalFloor, tvAdmin, tvProfile;
     ImageView ivChats;

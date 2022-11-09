@@ -1,17 +1,17 @@
 package com.example.gymbooker.Model;
 
-public class ModelGymTrainers { String inTrainerName, inGymType, inTrainerWeekly, inTrainerDuration, inTrainerCategory, inLimit, inDetails, inTime;
+public class ModelGymFloorTrainers { String inTrainerName, inGymType, inTrainerDay, inTrainerDuration, inTrainerCategory, inLimit, inDetails, inTime;
 
 
-    public ModelGymTrainers(String TrainerName, String GymType, String TrainerWeekly, String TrainerDuration, String TrainerCategory, String SlotLimit, String Details, String Time) {
-        this.inTrainerName = TrainerName;
-        this.inGymType = GymType;
-        this.inTrainerWeekly = TrainerWeekly;
-        this.inTrainerDuration = TrainerDuration;
-        this.inTrainerCategory = TrainerCategory;
-        this.inLimit = SlotLimit;
-        this.inDetails = Details;
-        this.inTime = Time;
+    public ModelGymFloorTrainers(String TrainerName, String GymType, String TrainerDay, String TrainerDuration, String TrainerCategory, String Limit, String Details, String Time) {
+        inTrainerName = TrainerName;
+        inGymType = GymType;
+        inTrainerDay = TrainerDay;
+        inTrainerDuration = TrainerDuration;
+        inTrainerCategory = TrainerCategory;
+        inLimit = Limit;
+        inDetails = Details;
+        inTime = Time;
     }
 
     public String getInTrainerName() {
@@ -30,13 +30,9 @@ public class ModelGymTrainers { String inTrainerName, inGymType, inTrainerWeekly
         this.inGymType = inGymType;
     }
 
-    public String getInTrainerWeekly() {
-        return inTrainerWeekly;
-    }
+    public String getInTrainerDay() { return inTrainerDay; }
 
-    public void setInTrainerWeekly(String inTrainerWeekly) {
-        this.inTrainerWeekly = inTrainerWeekly;
-    }
+    public void setInTrainerDay(String inTrainerDay) { this.inTrainerDay = inTrainerDay; }
 
     public String getInTrainerDuration() {
         return inTrainerDuration;

@@ -9,11 +9,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.example.gymbooker.Admin.AdminEditClasses;
-import com.example.gymbooker.Admin.AdminEditGymFloor;
-import com.example.gymbooker.Model.ModelGymTrainers;
+import com.example.gymbooker.Admin.AdminEditGymFloorTrainers;
+import com.example.gymbooker.GymAccess.GymFloorTrainersBooking;
+import com.example.gymbooker.Model.ModelGymFloorTrainers;
 import com.example.gymbooker.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -24,16 +23,13 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Objects;
 
 public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloorTrainers.GymTrainersHolder> {
 
-    ArrayList<ModelGymTrainers> ModelGymTrainers;
+    ArrayList<ModelGymFloorTrainers> ModelGymTrainers;
     Context context;
-    String timeSlot, userType, adminType, clientName, stats, clientContactNumber;
-    int limit, statistic;
+    String userType, adminType, clientName, clientContactNumber;
 
     Calendar calendar;
 
@@ -41,15 +37,15 @@ public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloo
     SimpleDateFormat simpleDateFormat;
 
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    String UserID = fAuth.getCurrentUser().getUid();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private String UserID = fAuth.getCurrentUser().getUid();
 
-    public AdapterGymFloorTrainers(ArrayList<ModelGymTrainers> modelGymTrainers, Context context) {
+    public AdapterGymFloorTrainers(ArrayList<ModelGymFloorTrainers> modelGymTrainers, Context context) {
         this.ModelGymTrainers = modelGymTrainers;
         this.context = context;
     }
 
-    public void AdapterSearchList(ArrayList<ModelGymTrainers> AdapterSearchList) {
+    public void AdapterSearchList(ArrayList<ModelGymFloorTrainers> AdapterSearchList) {
         ModelGymTrainers = AdapterSearchList;
         notifyDataSetChanged();
     }
@@ -71,47 +67,24 @@ public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloo
 
         currentTime = simpleDateFormat.format(calendar.getTime());
 
-        ModelGymTrainers gymTrainers = ModelGymTrainers.get(position);
+        ModelGymFloorTrainers gymTrainers = ModelGymTrainers.get(position);
 
         String trainerName = gymTrainers.getInTrainerName();
         String gymType = gymTrainers.getInGymType();
-        String trainerWeekly = gymTrainers.getInTrainerWeekly();
+        String trainerDay = gymTrainers.getInTrainerDay();
         String trainerDuration = gymTrainers.getInTrainerDuration();
         String trainerLimit = gymTrainers.getInLimit();
-        String trainerCategory = gymTrainers.getInTrainerCategory(); // Reference
+        String trainerCategory = gymTrainers.getInTrainerCategory();
         String trainerDetails = gymTrainers.getInDetails();
         String trainerTime = gymTrainers.getInTime();
 
         holder.tvTrainersName.setText(gymTrainers.getInTrainerName());
         holder.tvTrainerType.setText(gymTrainers.getInGymType());
-        holder.tvTrainerWeekly.setText(gymTrainers.getInTrainerWeekly());
+        holder.tvTrainerWeekly.setText(gymTrainers.getInTrainerDay());
         holder.tvTrainerDuration.setText(gymTrainers.getInTrainerDuration());
         holder.tvTrainerDetails.setText(gymTrainers.getInDetails());
         holder.tvTrainerTime.setText(gymTrainers.getInTime());
 
-//      Check limit
-        dReference = fStore.collection("Gym Trainers").document(gymTrainers.getInTrainerCategory());
-        dReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                timeSlot = documentSnapshot.getString("Limit");
-
-                limit = Integer.parseInt(timeSlot);
-                if(limit == 5){
-                    holder.btBookNow.setEnabled(false);
-                }
-            }
-        });
-
-        dReference = fStore.collection("Statistics").document("Gym Floor Trainers");
-        dReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-            @Override
-            public void onSuccess(DocumentSnapshot documentSnapshot) {
-                stats = documentSnapshot.getString("Total Bookings");
-
-                statistic = Integer.parseInt(stats);
-            }
-        });
 
         dReference = fStore.collection("Accounts").document(UserID);
         dReference.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
@@ -136,12 +109,12 @@ public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloo
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(view.getContext(), AdminEditGymFloor.class);
+                Intent i = new Intent(view.getContext(), AdminEditGymFloorTrainers.class);
                 i.putExtra("Trainer Name", trainerName);
-                i.putExtra("Day", trainerWeekly);
+                i.putExtra("Day", trainerDay);
                 i.putExtra("Duration", trainerDuration);
                 i.putExtra("Limit", trainerLimit);
-                i.putExtra("Trainer Category", trainerCategory); // Only for reference document
+                i.putExtra("Trainer Category", trainerCategory);
                 i.putExtra("Details", trainerDetails);
                 i.putExtra("Time", trainerTime);
 
@@ -149,47 +122,23 @@ public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloo
             }
         });
 
+
         holder.btBookNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                DocumentReference dReference1 = fStore.collection("Gym Trainers").document(gymTrainers.getInTrainerCategory());
-                DocumentReference dReference2 = fStore.collection("Statistics").document("Gym Floor Trainers");
+                Intent i = new Intent(view.getContext(), GymFloorTrainersBooking.class);
+                i.putExtra("Gym Type", gymType);
+                i.putExtra("Name", trainerName);
+                i.putExtra("Day", trainerDay);
+                i.putExtra("Time", trainerTime);
+                i.putExtra("Duration", trainerDuration);
+                i.putExtra("Limit", trainerLimit);
+                i.putExtra("Client Name", clientName);
+                i.putExtra("Client Contact Number", clientContactNumber);
+                i.putExtra("Trainer Category", trainerCategory);
 
-                dReference1.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-//                      Increase limit
-                        limit++;
-                        dReference1.update("Limit", limit + "");
-                        
-                    }
-                });
-
-                dReference2.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
-                    @Override
-                    public void onSuccess(DocumentSnapshot documentSnapshot) {
-
-                        statistic++;
-                        dReference2.update("Total Bookings", statistic + "");
-                    }
-                });
-
-                Map<String, Object> GymFloorBooking = new HashMap<>();
-                GymFloorBooking.put("Gym Trainer", trainerName);
-                GymFloorBooking.put("Gym Type", gymType);
-                GymFloorBooking.put("Day", trainerWeekly);
-                GymFloorBooking.put("Duration", trainerDuration);
-                GymFloorBooking.put("Client Name", clientName);
-                GymFloorBooking.put("User ID", UserID);
-                GymFloorBooking.put("Booked Time", currentTime);
-                GymFloorBooking.put("Time", trainerTime);
-                GymFloorBooking.put("Client Contact Number", clientContactNumber);
-
-                DocumentReference placeBooking = fStore.collection("Gym Bookings").document();
-                placeBooking.set(GymFloorBooking);
-
-                Toast.makeText(view.getContext(),"Booking Made", Toast.LENGTH_LONG).show();
+                view.getContext().startActivity(i);
 
             }
         });

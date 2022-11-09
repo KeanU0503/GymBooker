@@ -78,20 +78,19 @@ public class ViewChatMessages extends AppCompatActivity {
 
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         linearLayoutManager.setStackFromEnd(true);
-        RecMessages.setLayoutManager(linearLayoutManager); // Set recyclerView to linearlayout Manager
+        RecMessages.setLayoutManager(linearLayoutManager);
         AdapterViewChatMessages = new AdapterViewChatMessages(ViewChatMessages.this, ModelViewChatMessages); // Pass context and arraylist
         RecMessages.setAdapter(AdapterViewChatMessages);
 
-        // Fetch the data from RT-Database and store the messages in the arraylist
+
         dReference = fDatabase.getReference().child("Chats").child(SenderRoom).child("Messages");
         dReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 ModelViewChatMessages.clear();
-                for(DataSnapshot dataSnapshot:snapshot.getChildren()) // Gives access to all of the immediate children of this snapshot. // Take Message 1 by 1
+                for(DataSnapshot dataSnapshot:snapshot.getChildren())
                 {
-                    // Pass it to our arraylist
                     ModelViewChatMessages messages = dataSnapshot.getValue(ModelViewChatMessages.class);
                     ModelViewChatMessages.add(messages);
                 }
@@ -119,16 +118,16 @@ public class ViewChatMessages extends AppCompatActivity {
 
                 Date date = new Date();
                 currentTime = simpleDateFormat.format(calendar.getTime());
-                ModelViewChatMessages messages = new ModelViewChatMessages(message,SenderUID,date.getTime(),currentTime); // Object of the model
+                ModelViewChatMessages messages = new ModelViewChatMessages(message,SenderUID,date.getTime(),currentTime);
 
                 fDatabase = FirebaseDatabase.getInstance();
                 fDatabase.getReference().child("Chats")
                         .child(SenderRoom)
                         .child("Messages")
-                        .push() // Messages contain all four things of the model
+                        .push()
                         .setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                             @Override
-                            public void onComplete(@NonNull Task<Void> task) { // If send successfully send to receiver room
+                            public void onComplete(@NonNull Task<Void> task) {
                                 fDatabase.getReference().child("Chats")
                                         .child(ReceiverRoom)
                                         .child("Messages")
@@ -136,7 +135,7 @@ public class ViewChatMessages extends AppCompatActivity {
                                         .setValue(messages).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
-                                                // Display toast by choice
+
                                             }
                                         });
                             }

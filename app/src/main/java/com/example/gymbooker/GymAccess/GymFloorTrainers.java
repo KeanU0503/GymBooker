@@ -7,8 +7,10 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
 import com.example.gymbooker.Adapter.AdapterGymFloorTrainers;
-import com.example.gymbooker.Model.ModelGymTrainers;
+import com.example.gymbooker.Model.ModelGymFloorTrainers;
 import com.example.gymbooker.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -22,8 +24,8 @@ public class GymFloorTrainers extends AppCompatActivity {
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
 
-    ArrayList<ModelGymTrainers> ModelGymTrainers;
-    ArrayList<ModelGymTrainers> ModelSearchGymTrainers;
+    ArrayList<ModelGymFloorTrainers> ModelGymTrainers;
+    ArrayList<ModelGymFloorTrainers> ModelSearchGymTrainers;
 
     AdapterGymFloorTrainers AdapterGymTrainers;
 
@@ -47,7 +49,6 @@ public class GymFloorTrainers extends AppCompatActivity {
         statisticGymClasses();
     }
 
-    // Search bar
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -71,12 +72,13 @@ public class GymFloorTrainers extends AppCompatActivity {
         return true;
     }
 
-    // Compare
     private void filter(String text) {
-        ModelSearchGymTrainers = new ArrayList<ModelGymTrainers>();
-        for (ModelGymTrainers item : ModelGymTrainers) {
+        ModelSearchGymTrainers = new ArrayList<ModelGymFloorTrainers>();
+        for (ModelGymFloorTrainers item : ModelGymTrainers) {
 
-            if (item.getInTrainerName().toLowerCase().contains(text.toLowerCase())) {
+            if (item.getInTrainerName().toLowerCase().contains(text.toLowerCase()) || item.getInGymType().toLowerCase().contains(text.toLowerCase())
+                    || item.getInTrainerDuration().toLowerCase().contains(text.toLowerCase()) || item.getInTrainerDay().toLowerCase().contains(text.toLowerCase()) ) {
+
                 ModelSearchGymTrainers.add(item);
             }
 
@@ -86,7 +88,7 @@ public class GymFloorTrainers extends AppCompatActivity {
 
     private void readGymFloorTrainersDB() {
 
-        fStore.collection("Gym Trainers")
+        fStore.collection("Gym Floor Trainers")
                 .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
                     public void onSuccess(QuerySnapshot queryDocumentSnapshots) {
@@ -97,12 +99,12 @@ public class GymFloorTrainers extends AppCompatActivity {
                             String GymType = documentSnapshot.getString("Gym Type");
                             String Day = documentSnapshot.getString("Day");
                             String Duration = documentSnapshot.getString("Duration");
-                            String Category = documentSnapshot.getString("Trainer Category"); // Only for document reference
-                            String Limit = documentSnapshot.getString("Slot Limit");
+                            String Category = documentSnapshot.getString("Trainer Category");
+                            String Limit = documentSnapshot.getString("Limit");
                             String Details = documentSnapshot.getString("Details");
                             String Time = documentSnapshot.getString("Time");
 
-                            ModelGymTrainers GymTrainers = new ModelGymTrainers(GymTrainer,GymType,Day,Duration,Category,Limit,Details,Time);
+                            ModelGymFloorTrainers GymTrainers = new ModelGymFloorTrainers(GymTrainer,GymType,Day,Duration,Category,Limit,Details,Time);
                             ModelGymTrainers.add(GymTrainers);
                         }
 
@@ -126,4 +128,18 @@ public class GymFloorTrainers extends AppCompatActivity {
                 });
     }
 
+    public void CardioClick(View view) { filter("Cardio");
+    }
+
+    public void StrengthClick(View view) { filter("Strength");
+    }
+
+    public void MindClick(View view) { filter("Mind");
+    }
+
+    public void HiltClick(View view) { filter("Hilt");
+    }
+
+    public void CyclingClick(View view) { filter("Cycling");
+    }
 }

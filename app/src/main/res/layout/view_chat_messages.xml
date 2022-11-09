@@ -49,8 +49,9 @@
             android:id="@+id/viewChatMessages_typeMessages"
             android:layout_width="278dp"
             android:layout_height="50dp"
+            android:textAlignment="center"
             android:background="@drawable/curve_rectangle_pearl_white"
-            android:hint="     Type a message..."/>
+            android:hint="Type a message..."/>
 
         <ImageView
             android:id="@+id/viewChatMessages_sendMessages"

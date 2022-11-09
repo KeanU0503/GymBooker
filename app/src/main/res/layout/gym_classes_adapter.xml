@@ -98,27 +98,27 @@
             android:textSize="17sp"
             android:textStyle="bold" />
 
-        <TextView
-            android:id="@+id/gymClasses_MaxLimit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/gymClasses_Trainer"
-            android:layout_alignParentRight="true"
-            android:layout_marginEnd="28dp"
-            android:text="Max Limit: 8"
-            android:textAlignment="textEnd"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/gymClasses_MaxLimit"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@+id/gymClasses_Trainer"-->
+<!--            android:layout_alignParentRight="true"-->
+<!--            android:layout_marginEnd="28dp"-->
+<!--            android:text="Max Limit: 8"-->
+<!--            android:textAlignment="textEnd"-->
+<!--            android:textStyle="bold" />-->
 
-        <TextView
-            android:id="@+id/gymClasses_ClassLimit"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignTop="@+id/gymClasses_bookNow"
-            android:layout_alignParentEnd="true"
-            android:layout_marginTop="-30dp"
-            android:layout_marginEnd="28dp"
-            android:text="Current: 8"
-            android:textStyle="bold" />
+<!--        <TextView-->
+<!--            android:id="@+id/gymClasses_ClassLimit"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_alignTop="@+id/gymClasses_bookNow"-->
+<!--            android:layout_alignParentEnd="true"-->
+<!--            android:layout_marginTop="-30dp"-->
+<!--            android:layout_marginEnd="28dp"-->
+<!--            android:text="Current: 8"-->
+<!--            android:textStyle="bold" />-->
 
         <Button
             android:id="@+id/gymClasses_bookNow"

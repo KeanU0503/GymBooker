@@ -32,10 +32,9 @@ public class Register extends AppCompatActivity {
     Button btSignUp;
     TextView tvToLogin;
 
-    FirebaseFirestore fStore = FirebaseFirestore.getInstance();
-    FirebaseAuth fAuth = FirebaseAuth.getInstance();
-    String UserID;
-    FirebaseDatabase fDatabase = FirebaseDatabase.getInstance();
+    private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
+    private FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    private FirebaseDatabase fDatabase = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -106,6 +105,7 @@ public class Register extends AppCompatActivity {
                         userInfo.put("Password",etPassword.getText().toString());
                         userInfo.put("Contact Number",etContactNumber.getText().toString());
                         userInfo.put("User","1");
+                        userInfo.put("Chat","1");
 
                         ModelChatList users = new ModelChatList(FullName, null);
 

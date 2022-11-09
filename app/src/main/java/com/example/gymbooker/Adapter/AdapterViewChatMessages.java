@@ -46,13 +46,13 @@ public class AdapterViewChatMessages extends RecyclerView.Adapter {
         if(holder.getClass() == SenderViewHolder.class)
         {
             SenderViewHolder viewHolder = (SenderViewHolder) holder;
-            viewHolder.tvMessages.setText(messages.getMessage());
-            viewHolder.tvTime.setText(messages.getCurrentTime());
+            viewHolder.tvMessages.setText(messages.getInMessage());
+            viewHolder.tvTime.setText(messages.getInCurrentTime());
 
         }else {
             ReceiverViewHolder viewHolder = (ReceiverViewHolder) holder;
-            viewHolder.tvMessages.setText(messages.getMessage());
-            viewHolder.tvTime.setText(messages.getCurrentTime());
+            viewHolder.tvMessages.setText(messages.getInMessage());
+            viewHolder.tvTime.setText(messages.getInCurrentTime());
         }
     }
 
@@ -65,7 +65,7 @@ public class AdapterViewChatMessages extends RecyclerView.Adapter {
     public int getItemViewType(int position) {
         ModelViewChatMessages messages = ModelViewChatMessages.get(position);
 
-        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getSenderId()))
+        if(FirebaseAuth.getInstance().getCurrentUser().getUid().equals(messages.getInSenderId()))
         {
             return viewSender;
         }else {
@@ -73,7 +73,6 @@ public class AdapterViewChatMessages extends RecyclerView.Adapter {
         }
     }
 
-    // 2 view holder because we have 2 layout outs
     class SenderViewHolder extends RecyclerView.ViewHolder {
 
         TextView tvMessages, tvTime;

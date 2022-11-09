@@ -28,7 +28,6 @@ import java.util.Calendar;
 
 public class GymFloor extends AppCompatActivity {
 
-    // The type and the name of the variables
     ListView listview;
     TextView tvSelDate, tvSelTime, tvSelDuration, tvGymFloorTitle;
     Button btDate, btNext;
@@ -37,7 +36,7 @@ public class GymFloor extends AppCompatActivity {
 
     Calendar calender = Calendar.getInstance();
     DatePickerDialog showDatePicker;
-    ArrayList<String> StringModelTime; // Type of data it will hold (references to String)
+    ArrayList<String> StringModelTime;
 
     private FirebaseFirestore fStore = FirebaseFirestore.getInstance();
     private FirebaseAuth fAuth = FirebaseAuth.getInstance();
