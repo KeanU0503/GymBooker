@@ -7,18 +7,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
 
 import com.example.gymbooker.Adapter.AdapterGymHistory;
-import com.example.gymbooker.Model.ModelGymClasses;
 import com.example.gymbooker.Model.ModelGymHistory;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Query;
 import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GymHistory extends AppCompatActivity {
 
@@ -36,7 +37,7 @@ public class GymHistory extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gym_history);
+        setContentView(R.layout.history_gym);
 
         RecGymHistory = findViewById(R.id.RV_GymHistory);
         RecGymHistory.setHasFixedSize(true);
@@ -88,7 +89,6 @@ public class GymHistory extends AppCompatActivity {
 
     private void readGymHistoryDB() {
 
-
         fStore.collection("Gym Bookings").whereEqualTo("User ID", UserID)
                 .get().addOnSuccessListener(new OnSuccessListener<QuerySnapshot>() {
                     @Override
@@ -108,11 +108,18 @@ public class GymHistory extends AppCompatActivity {
                             ModelGymHistory.add(GymHistory);
                         }
 
+                        Collections.sort(ModelGymHistory, new Comparator<ModelGymHistory>() {
+                            @Override
+                            public int compare(ModelGymHistory t1, ModelGymHistory t2) {
+                                return t1.getInBookTime().compareToIgnoreCase(t2.getInBookTime());
+                            } // compare all the elements and arrange in ascending order
+                        });
+
+                        Collections.reverse(ModelGymHistory);
+
                         AdapterGymHistory.notifyDataSetChanged();
                     }
                 });
-
-
     }
 
 }

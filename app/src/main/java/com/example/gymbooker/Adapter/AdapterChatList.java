@@ -18,15 +18,15 @@ import java.util.ArrayList;
 
 public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatListHolder> {
 
-    ArrayList<ModelChatList> arrayModelChatList;
+    ArrayList<ModelChatList> ModelChatList;
     Context context;
 
     private FirebaseFirestore fStore;
     private FirebaseAuth fAuth;
     private String userID;
 
-    public AdapterChatList(ArrayList<ModelChatList> arrayModelChatList, Context context) {
-        this.arrayModelChatList = arrayModelChatList;
+    public AdapterChatList(ArrayList<ModelChatList> ModelChatList, Context context) {
+        this.ModelChatList = ModelChatList;
         this.context = context;
     }
 
@@ -44,14 +44,14 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
         fAuth = FirebaseAuth.getInstance();
         userID = fAuth.getCurrentUser().getUid();
 
-        final ModelChatList users = arrayModelChatList.get(position);
-        final String names = users.getInName();
+        ModelChatList users = ModelChatList.get(position);
+        String names = users.getInName();
 
-        holder.tvDisplayUser.setText(arrayModelChatList.get(position).getInName());
+        holder.tvDisplayUser.setText(ModelChatList.get(position).getInName());
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { // context - homeActivity
+            public void onClick(View view) {
                 Intent intent = new Intent(context, ViewChatMessages.class);
                 intent.putExtra("Full Name",users.getInName());
                 intent.putExtra("User ID",users.getInUid());
@@ -64,7 +64,7 @@ public class AdapterChatList extends RecyclerView.Adapter<AdapterChatList.ChatLi
 
     @Override
     public int getItemCount() {
-        return arrayModelChatList.size();
+        return ModelChatList.size();
     }
 
     public class ChatListHolder extends RecyclerView.ViewHolder {

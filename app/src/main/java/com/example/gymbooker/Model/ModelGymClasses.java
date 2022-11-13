@@ -1,14 +1,13 @@
 package com.example.gymbooker.Model;
 
-// represents the data model being displayed by the RecyclerView
 
 public class ModelGymClasses {
 
-    private String inClassName, inClassDetails, inClassTrainer, inClassDuration, inClassDay, inClassTime, inClassLimit, inClassCategory, inMaxLimit; // Java object
+    private String inClassName, inClassDetails, inClassTrainer, inClassDuration, inClassDay, inClassTime, inClassLimit, inClassCategory, inMaxLimit;
 
     public ModelGymClasses(String ClassName, String ClassDetails, String ClassTrainer, String ClassDuration, String ClassDay, String ClassTime, String ClassLimit, String ClassCategory, String MaxLimit) {
 
-        inClassName = ClassName;
+        inClassName = ClassName; // it will get the className from the database
         inClassDetails = ClassDetails;
         inClassTrainer = ClassTrainer;
         inClassDuration = ClassDuration;

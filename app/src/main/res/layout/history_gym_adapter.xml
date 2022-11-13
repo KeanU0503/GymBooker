@@ -39,11 +39,10 @@
                 android:id="@+id/adp_GymHistory_selectedDate"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="2dp"
                 android:layout_marginTop="-30dp"
                 android:text="88/88/8888"
                 android:textColor="@color/dark_pink"
-                android:textSize="23sp"
+                android:textSize="22sp"
                 android:textStyle="bold" />
 
 

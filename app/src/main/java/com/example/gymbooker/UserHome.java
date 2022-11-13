@@ -10,7 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.gymbooker.GymAccess.GymAccess;
-import com.example.gymbooker.GymAccess.GymFloorBooking;
+import com.example.gymbooker.GymAccess.PlaceBookingFloors;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -33,7 +33,7 @@ public class UserHome extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.user_home);
+        setContentView(R.layout.home_user);
         getSupportActionBar().hide();
 
         tvUser = findViewById(R.id.show_userName);
@@ -60,7 +60,7 @@ public class UserHome extends AppCompatActivity {
 
                 String passUserName = tvUser.getText().toString();
 
-                Intent toVerify = new Intent(view.getContext(), GymFloorBooking.class);
+                Intent toVerify = new Intent(view.getContext(), PlaceBookingFloors.class);
                 toVerify.putExtra("Client Name", passUserName);
 
                 startActivity(new Intent(getApplicationContext(), GymAccess.class));

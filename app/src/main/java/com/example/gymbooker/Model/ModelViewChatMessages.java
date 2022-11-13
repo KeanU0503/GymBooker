@@ -2,48 +2,50 @@ package com.example.gymbooker.Model;
 
 public class ModelViewChatMessages {
 
-    String message, senderId;
-    long timeStamp;
-    String currentTime;
+    String inMessage, inSenderId;
+    long inTimeStamp;
+    String inCurrentTime;
 
-    public ModelViewChatMessages() { // Empty constructor
+    public ModelViewChatMessages() {
 
     }
 
-    public ModelViewChatMessages(String message, String senderId, long timeStamp, String currentTime) {
-        this.message = message;
-        this.senderId = senderId;
-        this.timeStamp = timeStamp;
-        this.currentTime = currentTime;
+    public ModelViewChatMessages(String Message, String senderId, long TimeStamp, String CurrentTime) {
+        inMessage = Message;
+        inSenderId = senderId;
+        inTimeStamp = TimeStamp;
+        inCurrentTime = CurrentTime;
     }
 
-    public String getMessage() {
-        return message;
+    public String getInMessage() {
+        return inMessage;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setInMessage(String inMessage) {
+        this.inMessage = inMessage;
     }
 
-    public String getSenderId() {
-        return senderId;
+    public String getInSenderId() {
+        return inSenderId;
     }
 
-    public void setSenderId(String senderId) {
-        this.senderId = senderId;
+    public void setInSenderId(String inSenderId) {
+        this.inSenderId = inSenderId;
     }
 
-    public long getTimeStamp() {
-        return timeStamp;
+    public long getInTimeStamp() {
+        return inTimeStamp;
     }
 
-    public void setTimeStamp(long timeStamp) {this.timeStamp = timeStamp; }
-
-    public String getCurrentTime() {
-        return currentTime;
+    public void setInTimeStamp(long inTimeStamp) {
+        this.inTimeStamp = inTimeStamp;
     }
 
-    public void setCurrentTime(String currentTime) {
-        this.currentTime = currentTime;
+    public String getInCurrentTime() {
+        return inCurrentTime;
+    }
+
+    public void setInCurrentTime(String inCurrentTime) {
+        this.inCurrentTime = inCurrentTime;
     }
 }

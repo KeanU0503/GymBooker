@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.Admin.AdminEditGymFloorTrainers;
-import com.example.gymbooker.GymAccess.GymFloorTrainersBooking;
+import com.example.gymbooker.GymAccess.PlaceBookingTrainers;
 import com.example.gymbooker.Model.ModelGymFloorTrainers;
 import com.example.gymbooker.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -127,7 +127,7 @@ public class AdapterGymFloorTrainers extends RecyclerView.Adapter<AdapterGymFloo
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(view.getContext(), GymFloorTrainersBooking.class);
+                Intent i = new Intent(view.getContext(), PlaceBookingTrainers.class);
                 i.putExtra("Gym Type", gymType);
                 i.putExtra("Name", trainerName);
                 i.putExtra("Day", trainerDay);

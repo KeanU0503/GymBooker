@@ -21,7 +21,7 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
 
-public class GymFloorBooking extends AppCompatActivity {
+public class PlaceBookingFloors extends AppCompatActivity {
 
     TextView tvVerDate, tvVerTime, tvVerDuration, tvGymFloorTitle;
     Button btPlaceBooking;
@@ -40,7 +40,7 @@ public class GymFloorBooking extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gym_floor_booking);
+        setContentView(R.layout.place_booking_floors);
         getSupportActionBar().hide();
 
         tvVerDate = findViewById(R.id.verify_selectedDate);

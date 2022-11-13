@@ -18,7 +18,6 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Objects;
 
 public class AdapterGymHistory extends RecyclerView.Adapter<AdapterGymHistory.GymHistoryHolder> {
@@ -44,7 +43,7 @@ public class AdapterGymHistory extends RecyclerView.Adapter<AdapterGymHistory.Gy
     @NonNull
     @Override
     public AdapterGymHistory.GymHistoryHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.gym_history_adapter,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.history_gym_adapter,parent,false);
         return new AdapterGymHistory.GymHistoryHolder(view);
     }
 
@@ -103,4 +102,5 @@ public class AdapterGymHistory extends RecyclerView.Adapter<AdapterGymHistory.Gy
 
         }
     }
+
 }

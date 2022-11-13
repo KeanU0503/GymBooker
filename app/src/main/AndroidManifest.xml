@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.example.gymbooker">
+    package="com.example.gymbooker" >
 
     <application
         android:allowBackup="true"
@@ -12,12 +12,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GymBooker"
-        tools:targetApi="31">
+        tools:targetApi="31" >
         <activity
-            android:name=".GymAccess.GymFloorTrainersBooking"
+            android:name=".Charts.TrainerChart"
             android:exported="false" />
         <activity
-            android:name=".GymAccess.GymClassBooking"
+            android:name=".Charts.ClassChart"
+            android:exported="false" />
+        <activity
+            android:name=".Charts.BookingChart"
+            android:exported="false" />
+        <activity
+            android:name=".GymAccess.PlaceBookingTrainers"
+            android:exported="false" />
+        <activity
+            android:name=".GymAccess.PlaceBookingClasses"
             android:exported="false" />
         <activity
             android:name=".ManageGym"
@@ -54,10 +63,10 @@
             android:name=".GymHistory"
             android:exported="false" />
         <activity
-            android:name=".GymAccess.GymFloorBooking"
+            android:name=".GymAccess.PlaceBookingFloors"
             android:exported="false" />
         <activity
-            android:name=".GymAccess.GymFloor"
+            android:name=".GymAccess.SelectFloorOptions"
             android:exported="false" />
         <activity
             android:name=".GymAccess.GymAccess"
@@ -76,7 +85,7 @@
             android:exported="false" />
         <activity
             android:name=".Features.SplashScreen"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

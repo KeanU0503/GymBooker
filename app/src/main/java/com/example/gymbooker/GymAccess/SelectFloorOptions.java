@@ -26,7 +26,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.Calendar;
 
-public class GymFloor extends AppCompatActivity {
+public class SelectFloorOptions extends AppCompatActivity {
 
     ListView listview;
     TextView tvSelDate, tvSelTime, tvSelDuration, tvGymFloorTitle;
@@ -44,7 +44,7 @@ public class GymFloor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) { // Method
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.gym_floor);
+        setContentView(R.layout.select_floor_options);
         getSupportActionBar().hide();
 
         Intent intent = getIntent();
@@ -70,7 +70,7 @@ public class GymFloor extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                showDatePicker = new DatePickerDialog(GymFloor.this, new DatePickerDialog.OnDateSetListener() {
+                showDatePicker = new DatePickerDialog(SelectFloorOptions.this, new DatePickerDialog.OnDateSetListener() {
                     @Override
 
                     public void onDateSet(DatePicker datePicker, int year , int month, int day) {
@@ -95,7 +95,7 @@ public class GymFloor extends AppCompatActivity {
                 String selectedTime = tvSelTime.getText().toString();
                 String passGymFloorTitle = tvGymFloorTitle.getText().toString();
 
-                Intent toVerify = new Intent(view.getContext(), GymFloorBooking.class);
+                Intent toVerify = new Intent(view.getContext(), PlaceBookingFloors.class);
                 toVerify.putExtra("Gym Floor", passGymFloorTitle);
                 toVerify.putExtra("Duration", selectedDuration);
                 toVerify.putExtra("Date", selectedDate);
@@ -140,7 +140,7 @@ public class GymFloor extends AppCompatActivity {
 
                     public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                         String time = (String) adapterView.getItemAtPosition(position);
-                        Toast.makeText(GymFloor.this, "Selected: " + time, Toast.LENGTH_SHORT).show();
+                        Toast.makeText(SelectFloorOptions.this, "Selected: " + time, Toast.LENGTH_SHORT).show();
                         tvSelTime.setText(time);
                     }
                 });

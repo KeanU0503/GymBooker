@@ -8,13 +8,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 import com.example.gymbooker.R;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.DocumentReference;
-import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.Objects;
 
 public class GymAccess extends AppCompatActivity {
 
@@ -56,7 +51,7 @@ public class GymAccess extends AppCompatActivity {
                 AlertDialog.setNegativeButton("No thanks", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Intent intent = new Intent(GymAccess.this, GymFloor.class);
+                        Intent intent = new Intent(GymAccess.this, SelectFloorOptions.class);
                         startActivity(intent);
                     }
                 });

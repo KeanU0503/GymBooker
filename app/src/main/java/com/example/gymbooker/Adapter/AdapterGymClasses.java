@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.gymbooker.Admin.AdminEditClasses;
-import com.example.gymbooker.GymAccess.GymClassBooking;
+import com.example.gymbooker.GymAccess.PlaceBookingClasses;
 import com.example.gymbooker.Model.ModelGymClasses;
 import com.example.gymbooker.R;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -120,7 +120,7 @@ public class AdapterGymClasses extends RecyclerView.Adapter<AdapterGymClasses.Gy
             @Override
             public void onClick(View view) {
 
-                Intent i = new Intent(view.getContext(), GymClassBooking.class);
+                Intent i = new Intent(view.getContext(), PlaceBookingClasses.class);
                 i.putExtra("Class Name", className);
                 i.putExtra("Class Trainer", classTrainer);
                 i.putExtra("Class Day", classDay);
